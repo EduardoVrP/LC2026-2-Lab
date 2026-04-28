@@ -57,3 +57,8 @@ darValor [Not (Var p)] = [(p,False)]
 --Funcion auxiliar para acumular las clausulas que no son unitarias
 acumularClausula :: Estado -> Estado -> Estado
 acumularClausula (_,xs) (l2, ys) = (l2, xs ++ ys)
+
+
+--Funcion auxiliar para acumular las literales del modelo
+acumularModelo :: Estado -> Estado -> Estado
+acumularModelo (m1,_) (m2, ys) = (m1 ++ m2, ys)
