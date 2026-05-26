@@ -13,5 +13,6 @@ delta(q3,f,q4).
 reconoce(Lista) :- deltaEstrella(Lista, q0).
 
 deltaEstrella([],EstadoI) :- estadofinal(EstadoI).
-deltaEstrella([X],EstadoI) :- delta(EstadoI,X,EstadoTrans), estadofinal(EstadoTrans).
-deltaEstrella([X | Resto],EstadoI) :- delta(EstadoI, X, EstadoTrans), deltaEstrella(Resto,EstadoTrans).
+deltaEstrella([X | Resto],EstadoI) :- 
+    delta(EstadoI, X, EstadoTrans), 
+    deltaEstrella(Resto,EstadoTrans).
